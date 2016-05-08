@@ -40,12 +40,12 @@
          "API_KEY": {
              doc: "API key given by tokbox",
              format: String,
-             default: "45585302"// "INSERT YOUR TOKBOX API KEY"
+             default: "INSERT YOUR TOKBOX API KEY"
          },
          "API_SECRET": {
              doc: "API secret given by tokbox",
              format: String,
-             default: "a2ccb22c167cb211d733f97049acc489ccfbcda8" //"INSERT YOUR TOKBOX API SECRET"
+             default: "INSERT YOUR TOKBOX API SECRET"
          }
      }
  });
@@ -55,6 +55,6 @@
  config.loadFile('./config/' + env + '.json');
 
  // Perform validation
- config.validate({strict: false});
+ config.validate({strict: true});
 
  module.exports = config;
