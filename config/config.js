@@ -52,7 +52,7 @@
 
  // Load environment dependent configuration
  var env = config.get('env');
- config.loadFile('./' + env + '.json');
+ config.loadFile('./config/' + env + '.json');
 
  // Perform validation
  config.validate({strict: true});

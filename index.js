@@ -3,8 +3,7 @@
 // Dependencies
 let express = require('express'),
   OpenTok = require('opentok'),
-  config = require('./config/config'),
-  cfenv = require('cfenv');
+  config = require('./config/config');
 // Verify that the API Key and API Secret are defined
 let apiKey = config.get("tokbox.API_KEY"),
     apiSecret = config.get("tokbox.API_SECRET");
@@ -40,10 +39,10 @@ app.get('/', function(req, res) {
     });
 });
 
-var appEnv = cfenv.getAppEnv();
+// var appEnv = cfenv.getAppEnv();
 // Start the express app
 function init() {
-    app.listen(appEnv.port || config.get('server.port'), function() {
-        console.log('You\'re app is now ready at ', appEnv.url);
+    app.listen(process.env.VCAP_APP_PORT  || /* appEnv.port || */config.get('server.port'), function() {
+        console.log('You\'re app is now ready at ' /*appEnv.url*/);
     });
 }
